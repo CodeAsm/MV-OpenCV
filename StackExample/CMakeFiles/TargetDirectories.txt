@@ -1,0 +1,3 @@
+/home/codeasm/Projects/HVA/Motion en Vision/Slokker-Vision-w567/opencv/CMakeFiles/opencv.dir
+/home/codeasm/Projects/HVA/Motion en Vision/Slokker-Vision-w567/opencv/CMakeFiles/edit_cache.dir
+/home/codeasm/Projects/HVA/Motion en Vision/Slokker-Vision-w567/opencv/CMakeFiles/rebuild_cache.dir
