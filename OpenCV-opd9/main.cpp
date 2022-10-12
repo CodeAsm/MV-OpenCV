@@ -29,11 +29,8 @@ int main(int argc, char** argv)
        // Reduce noise:
 	GaussianBlur(greyimage, greyimage, Size(9, 9), 2, 2);
 
-	// =======================================
-
-	
 	// Storage for blobs
-    vector<KeyPoint> keypoints;
+    vector<KeyPoint> cicles;
 
 	// Setup SimpleBlobDetector parameters.
     SimpleBlobDetector::Params params;
@@ -42,47 +39,25 @@ int main(int argc, char** argv)
     Ptr<SimpleBlobDetector> detector = SimpleBlobDetector::create(params);
 
     // Detect blobs
-    detector->detect(greyimage, keypoints);
-	// Draw detected blobs as red circles.
-    // DrawMatchesFlags::DRAW_RICH_KEYPOINTS flag ensures
-    // the size of the circle corresponds to the size of blob
+    detector->detect(greyimage, cicles);
 
-    Mat im_with_keypoints;
-    drawKeypoints(greyimage, keypoints, im_with_keypoints, Scalar(0, 0, 255), DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
+    Mat image_circles;
+    drawKeypoints(greyimage, cicles, image_circles, Scalar(0, 0, 255), DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
 
 
 
-	// Print (cout) the number of circles in the image 
-	if (keypoints.size() >= 1) {
-		cout << keypoints.size() << " circles detected!" << endl;
+	// Print (cout) the number of circles in the image (legaly borrowed from example)
+	if (cicles.size() >= 1) {
+		cout << cicles.size() << " circles detected!" << endl;
 	}
 	else {
 		cout << "No circled detected." << endl;
 	}
 
-       // Print for each circle the coordinates of the centre and the radius 
-	/*/ example: circle[0][2]is the radius of circle number 0  
-
-      	int k;
- 	for (k = 0; k < keypoints.size(); k++) {
-		cout << keypoints[k][0] << "    " << keypoints[k][1] << "   "   
-                << keypoints[k][2] << endl;
-	}*/
-
-    // Show blobs
-	namedWindow("keypoints", WINDOW_AUTOSIZE);
-    imshow("keypoints", im_with_keypoints);
-
+    // Show blobby circles
+	namedWindow("cicles", WINDOW_AUTOSIZE);
+    imshow("cicles", image_circles);
 	waitKey(0);
-
-	// ======================================
-    
-	// each element of the vector (array) circles is a vector of three float 
-       // numbers: x-coordinate of the midpoint, y-coordinate of the midpoint, 
-       // radius
-	vector<Vec3f> circles;
-
-
 	return 0;
 }
 
