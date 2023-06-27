@@ -33,10 +33,10 @@ int main(int argc, char** argv)
     vector<KeyPoint> cicles;
 
 	// Setup SimpleBlobDetector parameters.
-    SimpleBlobDetector::Params params;
+    SimpleBlobDetector::Params parameters;
 
 	// Set up detector with params
-    Ptr<SimpleBlobDetector> detector = SimpleBlobDetector::create(params);
+    Ptr<SimpleBlobDetector> detector = SimpleBlobDetector::create(parameters);
 
     // Detect blobs
     detector->detect(greyimage, cicles);
