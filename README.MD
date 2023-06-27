@@ -63,3 +63,26 @@ int main(int argc, char** argv)
     return 0;
 }
 ```
+
+```sh 
+cmake
+make
+```
+If adding debug
+
+```bash
+
+# by AI, to enable debug
+set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
+```
+
+then run
+```sh
+cmake --build build/debug/
+```
+
+## Resources
+
+usefull includepath fix:
+https://stackoverflow.com/questions/41843794/visual-studio-code-with-opencv-libraries
