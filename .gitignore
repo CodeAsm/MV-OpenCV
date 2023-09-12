@@ -1,4 +1,7 @@
 cmake_install.cmake
 CMakeCache.txt
 CMakeFiles/
+OpenCV-opd6/opencv
+OpenCV-opd7/opencv
+OpenCV-opd8/opencv
 OpenCV-opd9/opencv
